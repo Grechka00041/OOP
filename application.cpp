@@ -1,0 +1,93 @@
+#include "headers/application.h"
+
+#include "iostream"
+
+using namespace std;
+
+
+Application::Application() {
+
+}
+
+void Application::menu() {
+    cout << "1 - Создать массив заданной длины" << endl;
+    cout << "2 - Изменить размерность массива" << endl;
+    cout << "3 - Заполнить массив" << endl;
+    cout << "4 - Вывести элементы массива" << endl;
+    cout << "5 - Вычислить среднее и СКО" << endl;
+    cout << "6 - Сортировать по возрастанию и убыванию" << endl;
+    cout << "7 - Изменить значение выбранного элемента массива" << endl;
+    cout << "8 - Выход" << endl;
+}
+
+int Application::exec() {
+    int option, length;
+    Array* array = new Array();
+    while (true) {
+        menu();
+        cout << "Выберите вариант: " << endl;
+        cin >> option;
+
+        switch (option) {
+        case 1:
+        {
+            cout << "Введите длину массива" << endl;
+            cin >> length;
+            array = new Array(length);
+            break;
+        }
+        case 2:
+        {
+            cout << "Введите длину массива";
+            int length;
+            cin >> length;
+            array->changeLength(length);
+            break;
+        }
+        case 3:
+        {
+            cout << "Введите элементы для заполнения";
+            //array->fill();
+            break;
+        }
+        case 4:
+        {
+            cout << "Ваш массив: ";
+            array->printArray();
+            cout << "\n";
+            break;
+        }
+        case 5:
+        {
+            cout << "Среднее значение: ";
+            array->average();
+            cout << "СКО: ";
+            array->sko();
+            break;
+        }
+        case 6:
+        {
+            cout << "Исходный массив: ";
+            array->printArray();
+            cout << "Отсортированный по возрастанию: ";
+            array->sortIncrease();
+            cout << "Отсортированный по убыванию: ";
+            array->sortIncrease();
+            break;
+        }
+        case 7:
+        {
+            //здесь будет функция
+            break;
+        }
+        case 8:
+        {
+            return 0;
+        }
+        default:
+        {
+            cout << "Введите корректное значение";
+        }
+        }
+    }
+}
