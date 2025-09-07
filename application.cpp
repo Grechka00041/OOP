@@ -47,7 +47,7 @@ int Application::exec() {
         case 3:
         {
             cout << "Введите элементы для заполнения";
-            //array->fill();
+            array->add();
             break;
         }
         case 4:
@@ -59,10 +59,8 @@ int Application::exec() {
         }
         case 5:
         {
-            cout << "Среднее значение: ";
-            array->average();
-            cout << "СКО: ";
-            array->sko();
+            cout << "Среднее значение: " << array->average() << ", ";
+            cout << "СКО: " << array->sko() << endl;
             break;
         }
         case 6:
@@ -71,13 +69,15 @@ int Application::exec() {
             array->printArray();
             cout << "Отсортированный по возрастанию: ";
             array->sortIncrease();
+            array->printArray();
             cout << "Отсортированный по убыванию: ";
-            array->sortIncrease();
+            array->sortDecrease();
+            array->printArray();
             break;
         }
         case 7:
         {
-            //здесь будет функция
+
             break;
         }
         case 8:
