@@ -19,7 +19,7 @@ public:
     double sko();
     void sortIncrease();
     void sortDecrease();
-    void changeElem(int elem, int value);
+    void changeElem(int index, int value);
 
 };
 

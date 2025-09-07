@@ -84,7 +84,16 @@ int Application::exec() {
         }
         case 8:
         {
-
+            int index, value;
+            cout << "Исходный массив: ";
+            array->printArray();
+            cout << "Введите индекс элемента для изменения: ";
+            cin >> index;
+            cout << "Введите новое значение: ";
+            cin >> value;
+            cout << "Измененный массив: ";
+            array->changeElem(index, value);
+            array->printArray();
             break;
         }
         case 9:

@@ -87,6 +87,8 @@ void Array::sortDecrease() {
     }
 }
 
-void Array::changeElem(int number, int value) {
-    array[number] = value;
+void Array::changeElem(int index, int value) {
+    if (index <= length && index >= 0) {
+        array[index] = value;
+    }
 }
