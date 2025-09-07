@@ -41,6 +41,7 @@ void Array::printArray() {
     for (int i = 0; i < length; i++) {
         cout << array[i] <<" ";
     }
+    cout << "\n";
 }
 number Array::average() {
     number summa = 0;
@@ -68,22 +69,20 @@ number Array::sko() {
     return result;
 }
 void Array::sortIncrease(){
-    number temp = 0;
-    for (int i = 0; i < length; i++) {
-        if (array[i] > array[i + 1]) {
-            temp = array[i + 1];
-            array[i + 1] = array[i];
-            array[i] = temp;
+    for (int i = 0; i < length - 1; i++) {
+        for (int j=0; j < length - i - 1; j++) {
+            if (array[j] > array[j+1]) {
+                swap(array[j], array[j+1]);
+            }
         }
     }
 }
 void Array::sortDecrease() {
-    number temp = 0;
-    for (int i = 0; i < length; i++) {
-        if (array[i] < array[i + 1]) {
-            temp = array[i + 1];
-            array[i + 1] = array[i];
-            array[i] = temp;
+    for (int i = 0; i < length - 1; i++) {
+        for (int j=0; j < length - i - 1; j++) {
+            if (array[j] < array[j+1]) {
+                swap(array[j], array[j+1]);
+            }
         }
     }
 }

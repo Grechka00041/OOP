@@ -15,9 +15,10 @@ void Application::menu() {
     cout << "3 - Заполнить массив" << endl;
     cout << "4 - Вывести элементы массива" << endl;
     cout << "5 - Вычислить среднее и СКО" << endl;
-    cout << "6 - Сортировать по возрастанию и убыванию" << endl;
-    cout << "7 - Изменить значение выбранного элемента массива" << endl;
-    cout << "8 - Выход" << endl;
+    cout << "6 - Сортировать по возрастанию" << endl;
+    cout << "7 - Сортировать по убыванию" << endl;
+    cout << "8 - Изменить значение выбранного элемента массива" << endl;
+    cout << "9 - Выход" << endl;
 }
 
 int Application::exec() {
@@ -70,17 +71,23 @@ int Application::exec() {
             cout << "Отсортированный по возрастанию: ";
             array->sortIncrease();
             array->printArray();
+            break;
+        }
+            case 7:
+        {
+            cout << "Исходный массив: ";
+            array->printArray();
             cout << "Отсортированный по убыванию: ";
             array->sortDecrease();
             array->printArray();
             break;
         }
-        case 7:
+        case 8:
         {
 
             break;
         }
-        case 8:
+        case 9:
         {
             return 0;
         }
