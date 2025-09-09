@@ -40,7 +40,6 @@ int Application::exec() {
         case 2:
         {
             cout << "Введите длину массива";
-            int length;
             cin >> length;
             array->changeLength(length);
             break;

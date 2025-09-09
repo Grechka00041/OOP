@@ -26,7 +26,7 @@ void Array::add() {
     }
 }
 void Array::changeLength(int new_length) {
-    number * rez = new number[new_length];
+    number *rez = new number[new_length];
     for (int i = 0; i < length; i++) {
         rez[i] = array[i];
     }
