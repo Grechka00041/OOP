@@ -11,8 +11,8 @@ Application::Application() {
 
 void Application::menu() {
     cout << "1 - Создать массив заданной длины" << endl;
-    cout << "2 - Изменить размерность массива" << endl;
-    cout << "3 - Заполнить массив" << endl;
+    cout << "2 - Заполнить массив" << endl;
+    cout << "3 - Изменить размерность массива" << endl;
     cout << "4 - Вывести элементы массива" << endl;
     cout << "5 - Вычислить среднее и СКО" << endl;
     cout << "6 - Сортировать по возрастанию" << endl;
@@ -39,15 +39,16 @@ int Application::exec() {
         }
         case 2:
         {
-            cout << "Введите длину массива";
-            cin >> length;
-            array->changeLength(length);
+            cout << "Введите элементы для заполнения массива";
+            array->add();
             break;
         }
         case 3:
         {
-            cout << "Введите элементы для заполнения";
-            array->add();
+            cout << "Введите новую длину массива";
+            cin >> length;
+            length = array->changeLength(length);
+            cout << length;
             break;
         }
         case 4:

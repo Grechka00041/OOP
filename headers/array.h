@@ -12,7 +12,7 @@ public:
     Array(int length = 0);
     void fill(int n);
     ~Array();
-    void changeLength(int length);
+    int changeLength(int new_length);
     void add();
     void printArray();
     double average();

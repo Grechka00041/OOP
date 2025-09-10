@@ -25,16 +25,21 @@ void Array::add() {
         cin >> array[i];
     }
 }
-void Array::changeLength(int new_length) {
-    number *rez = new number[new_length];
-    for (int i = 0; i < length; i++) {
-        rez[i] = array[i];
+int Array::changeLength(int new_length) {
+    if (new_length <= 0) return length;
+
+    number* new_array = new number[new_length];
+    for (int i = 0; i < min(length, new_length); i++) {
+        new_array[i] = array[i];
     }
     delete[] array;
-    array = rez;
+    array = new_array;
     for (int i = length; i < new_length; i++) {
+        cout << "Введите новый элемент массива";
         cin >> array[i];
     }
+    length = new_length;
+    return length;
 }
 
 void Array::printArray() {
